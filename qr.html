@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN">
+<head>
+<title>QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+	<style>
+body {
+	background-color: #e9eef0ff;
+}		
+.qr {
+  display: block;
+  margin-left: 27%;
+  margin-right: auto;
+  width: 50%;
+  color: red;
+.text {
+  display: block;
+  margin-left: 27%;
+  margin-right: auto;
+  width: 150px;
+  height: 35px;
+  .text {
+	border: 10px solid transparent;
+
+  }
+}	
+}
+</style>
+<input id="text" type="text" class="text" value="CryptoCapital" style=" width: 150px; height: 25px; margin-left: 17%; padding-left:19%; margin-top:50px;"/><br />
+<div id="input" type="text" class="text"  value="" style=" width: 80%; height: 25px; margin-left: 30px; margin-top:15px;">37qkZYnnWE64S4zRtAXLdzXjSe2MzHBv1M</div>
+<div id="qrcode" class="qr" style="width:100px; height:100px; margin-top:15px" color="red"></div>	
+	
+<script>
+var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+for(var i = 0; i < hashParams.length; i++){
+    var p = hashParams[i].split('=');
+    document.getElementById(p[0]).value = decodeURIComponent(p[1]);;
+}
+</script>
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 150,
+	height : 150
+});
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		alert("Input a text");
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+}
+
+makeCode();
+
+$("#btn").
+	on("click", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
+</script>
+</body>
