@@ -110,3 +110,8 @@ p {
 #got-it-btn:hover {
   background-color: #3e8e41;
 }
+
+@media (max-width: 767px) {
+  .announcement-box {
+    font-size: 16px;
+  }
