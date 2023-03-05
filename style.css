@@ -111,7 +111,7 @@ p {
   background-color: #3e8e41;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .announcement-box {
-    font-size: 16px;
+    font-size: 19px;
   }
