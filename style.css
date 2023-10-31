@@ -26,14 +26,51 @@ nav a {
 }
 
 .hero {
-  background-image: url("header2.jpg");
+  background-image: url("2TheMoon.jpg");
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+                   .btn {
+                    margin-left: 400px;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                    line-height: 1;
+                    border-radius: 500px;
+                    transition-property: background-color,border-color,color,box-shadow,filter;
+                    transition-duration: .3s;
+                    border: 1px solid transparent;
+                    letter-spacing: 2px;
+                    min-width: 160px;
+                    text-transform: uppercase;
+                    white-space: normal;
+                    font-weight: 700;
+                    text-align: center;
+                    padding: 17px 48px;
+                    color: #fff;
+                    background-color: #1ED760;
+                    height: 48px;
+
+}
+
+  .myheading {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .myheading h1{
+    font-family: gill sans, sans-serif;
+    font-size: : 40px;
+
+  }
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -95,11 +132,11 @@ p {
   background-color: #192734ff;
   padding: 20px;
   text-align: center;
-}  
-  
+}
+
 #announcement-message p {
   line-height: 1.5;
-  color: #8899a6ff;  
+  color: #8899a6ff;
 }
 
 #announcement-message label {
@@ -120,3 +157,57 @@ p {
   background-color: #3e8e41;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+bodycount {
+	font-family: 'Roboto', sans-serif;
+	background: lightskyblue
+		url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg');
+	color: #fff;
+	/* Push to bottom */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100vh;
+}
+.counters {
+	background: #0f479a;
+	color: #fff;
+	padding: 40px 20px;
+	border-top: 3px lightskyblue solid;
+}
+
+.counters .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+	text-align: center;
+}
+
+.counters i {
+	color: lightskyblue;
+	margin-bottom: 5px;
+}
+
+.counters .counter {
+	font-size: 45px;
+	margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+	.counters .container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.counters .container > div:nth-of-type(1),
+	.counters .container > div:nth-of-type(2) {
+		border-bottom: 1px lightskyblue solid;
+		padding-bottom: 20px;
+	}
+}
